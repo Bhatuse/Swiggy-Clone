@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# IDEs
+.vscode
+.idea
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Node.js
+node_modules
+npm-debug.log*
+
+# Terraform
+.terraform
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+LICENSE

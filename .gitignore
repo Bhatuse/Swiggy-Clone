@@ -1,0 +1,36 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Node.js (if you add it later)
+node_modules/
+npm-debug.log*
+
+# Terraform (if you keep Terraform in same repo)
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# AWS credentials
+.aws/
+
+# Build artifacts
+dist/
+build/
