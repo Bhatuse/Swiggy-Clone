@@ -1,64 +1,65 @@
 output "vpc_id" {
-  description = "ID of the VPC"
+  description = "VPC ID"
   value       = aws_vpc.main.id
 }
 
-output "vpc_arn" {
-  description = "ARN of the VPC"
-  value       = aws_vpc.main.arn
-}
-
 output "internet_gateway_id" {
-  description = "ID of the Internet Gateway"
+  description = "Internet Gateway ID"
   value       = aws_internet_gateway.swiggy_ig.id
 }
 
-output "private_subnet_1_id" {
-  description = "ID of private subnet 1"
-  value       = aws_subnet.private_subnet_1.id
-}
-
-output "private_subnet_2_id" {
-  description = "ID of private subnet 2"
-  value       = aws_subnet.private_subnet_2.id
-}
-
-output "private_subnet_ids" {
-  description = "List of private subnet IDs"
-  value       = [aws_subnet.private_subnet_1.id, aws_subnet.private_subnet_2.id]
-}
-
 output "public_subnet_1_id" {
-  description = "ID of public subnet 1"
+  description = "Public Subnet 1 ID"
   value       = aws_subnet.public_subnet_1.id
 }
 
 output "public_subnet_2_id" {
-  description = "ID of public subnet 2"
+  description = "Public Subnet 2 ID"
   value       = aws_subnet.public_subnet_2.id
+}
+
+output "private_subnet_1_id" {
+  description = "Private Subnet 1 ID"
+  value       = aws_subnet.private_subnet_1.id
+}
+
+output "private_subnet_2_id" {
+  description = "Private Subnet 2 ID"
+  value       = aws_subnet.private_subnet_2.id
 }
 
 output "public_subnet_ids" {
   description = "List of public subnet IDs"
-  value       = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id]
+  value = [
+    aws_subnet.public_subnet_1.id,
+    aws_subnet.public_subnet_2.id
+  ]
+}
+
+output "private_subnet_ids" {
+  description = "List of private subnet IDs"
+  value = [
+    aws_subnet.private_subnet_1.id,
+    aws_subnet.private_subnet_2.id
+  ]
 }
 
 output "public_route_table_id" {
-  description = "ID of the public route table"
+  description = "Public Route Table ID"
   value       = aws_route_table.public_rt.id
 }
 
 output "private_route_table_id" {
-  description = "ID of the private route table"
+  description = "Private Route Table ID"
   value       = aws_route_table.private_rt.id
 }
 
-output "eip_id" {
-  description = "ID of the Elastic IP"
-  value       = aws_eip.swiggy_eip.id
+output "nat_gateway_id" {
+  description = "NAT Gateway ID"
+  value       = aws_nat_gateway.swiggy_nat.id
 }
 
-output "nat_gateway_id" {
-  description = "ID of the NAT Gateway"
-  value       = aws_nat_gateway.swiggy_nat.id
+output "elastic_ip_id" {
+  description = "Elastic IP Allocation ID"
+  value       = aws_eip.swiggy_eip.id
 }
