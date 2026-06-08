@@ -1,5 +1,9 @@
 resource "aws_cloudwatch_log_group" "swiggy_logs" {
-  name = "/ecs/swiggy"
+  name              = var.cw_log_group_name
+  retention_in_days = var.cw_log_group_retention
 
-  retention_in_days = 7
+  tags = {
+    Environment = var.environment
+    Name        = "swiggy-logs"
+  }
 }

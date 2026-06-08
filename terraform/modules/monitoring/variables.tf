@@ -1,3 +1,9 @@
+variable "environment" {
+  description = "Environment name (dev, prod)"
+  type        = string
+  default     = "dev"
+}
+
 variable "cw_log_group_name" {
   description = "Name of the CloudWatch log group"
   type        = string

@@ -1,6 +1,6 @@
 resource "aws_security_group" "alb_sg" {
   name        = "alb-sg"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 
   tags = {
     Name = "alb-sg"
@@ -32,7 +32,7 @@ resource "aws_vpc_security_group_egress_rule" "alb_sg_outbound" {
 
 resource "aws_security_group" "app_sg" {
   name        = "app-sg"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 
   tags = {
     Name = "app-sg"

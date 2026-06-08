@@ -2,11 +2,9 @@ resource "aws_lb" "swiggy_alb" {
   name               = "swiggy-alb"
   internal            = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.alb_sg.id]
-  subnets = [
-    aws_subnet.public_subnet_1.id,
-    aws_subnet.public_subnet_2.id
-  ]
+  security_groups    = var.alb_security_groups
+  subnets            = var.alb_subnets
+
   tags = {
     Environment = "production"
   }
@@ -17,7 +15,7 @@ resource "aws_lb_target_group" "alb_tg_blue" {
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 }
 
 resource "aws_lb_target_group" "alb_tg_green" {
@@ -25,7 +23,7 @@ resource "aws_lb_target_group" "alb_tg_green" {
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 }
 
 resource "aws_lb_listener" "http_listener" {
