@@ -29,7 +29,6 @@ resource "aws_vpc_security_group_egress_rule" "alb_sg_outbound" {
   ip_protocol       = "-1"
 }
 
-##############
 
 resource "aws_security_group" "app_sg" {
   name        = "app-sg"
@@ -54,5 +53,3 @@ resource "aws_vpc_security_group_egress_rule" "app_sg_outbound" {
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1"
 }
-
-#################
