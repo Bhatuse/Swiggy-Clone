@@ -1,11 +1,17 @@
 {
   "family": "swiggy-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::437229446821:role/swiggy-ecs-execution-role",
   "containerDefinitions": [
     {
       "name": "swiggy-app",
       "image": "<IMAGE1_NAME>",
       "essential": true,
-      "memory": 512
       "portMappings": [
         {
           "containerPort": 80,
