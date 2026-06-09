@@ -1,7 +1,11 @@
-output "bucket_name" {
-  value = aws_s3_bucket.terraform_state.bucket
+output "dev_state_bucket" {
+  value = aws_s3_bucket.dev_state.bucket
 }
 
-output "dynamodb_table_name" {
+output "prod_state_bucket" {
+  value = aws_s3_bucket.prod_state.bucket
+}
+
+output "terraform_lock_table" {
   value = aws_dynamodb_table.terraform_lock.name
 }
