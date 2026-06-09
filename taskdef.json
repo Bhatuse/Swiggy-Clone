@@ -5,6 +5,7 @@
       "name": "swiggy-app",
       "image": "<IMAGE1_NAME>",
       "essential": true,
+      "memory": 512
       "portMappings": [
         {
           "containerPort": 80,
