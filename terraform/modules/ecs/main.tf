@@ -48,6 +48,13 @@ resource "aws_ecs_service" "swiggy_service" {
     type = "CODE_DEPLOY"
   }
 
+  lifecycle {
+  ignore_changes = [
+    task_definition,
+    load_balancer
+  ]
+}
+
   network_configuration {
     subnets = var.private_subnet_ids
 

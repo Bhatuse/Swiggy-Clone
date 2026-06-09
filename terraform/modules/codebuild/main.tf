@@ -17,16 +17,18 @@ resource "aws_codebuild_project" "this" {
     image                       = "aws/codebuild/standard:7.0"
     type                        = "LINUX_CONTAINER"
     image_pull_credentials_type = "CODEBUILD"
-    privileged_mode             = true    # required for docker build/push
+    privileged_mode             = true
 
     environment_variable {
-      name  = "ECR_REPO_URI"
+      name  = "ECR_REPOSITORY_URI"
       value = var.ecr_repo_uri
     }
+
     environment_variable {
-      name  = "AWS_REGION"
+      name  = "AWS_DEFAULT_REGION"
       value = var.aws_region
     }
+
     environment_variable {
       name  = "ENVIRONMENT"
       value = var.environment
@@ -39,5 +41,7 @@ resource "aws_codebuild_project" "this" {
     }
   }
 
-  tags = { Environment = var.environment }
+  tags = {
+    Environment = var.environment
+  }
 }

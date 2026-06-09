@@ -53,3 +53,27 @@ variable "s3_bucket_name" {
   type        = string
   description = "S3 bucket name for ALB logs"
 }
+
+variable "ecr_repo_uri" {
+  type = string
+}
+
+variable "aws_region" {
+  description = "AWS Region"
+  type        = string
+}
+
+variable "codestar_connection_arn" {
+  description = "CodeStar Connection ARN"
+  type        = string
+}
+
+variable "github_repo" {
+  description = "GitHub Repository"
+  type        = string
+}
+
+variable "github_branch" {
+  description = "GitHub Branch"
+  type        = string
+}
