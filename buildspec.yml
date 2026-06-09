@@ -24,10 +24,10 @@ phases:
       - docker push $ECR_REPOSITORY_URI:$IMAGE_TAG
       - docker push $ECR_REPOSITORY_URI:latest
 
-      - printf '[{"name":"swiggy-app","imageUri":"%s"}]' $ECR_REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '{"ImageURI":"%s"}' $ECR_REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
 
 artifacts:
   files:
     - appspec.yml
     - taskdef.json
-    - imagedefinitions.json
+    - imageDetail.json
